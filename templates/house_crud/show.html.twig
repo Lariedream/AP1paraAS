@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}House{% endblock %}
+
+{% block body %}
+    <h1>House</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ house.id }}</td>
+            </tr>
+            <tr>
+                <th>Number</th>
+                <td>{{ house.number }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_house_crud_index') }}">back to list</a>
+
+    <a href="{{ path('app_house_crud_edit', {'id': house.id}) }}">edit</a>
+
+    {{ include('house_crud/_delete_form.html.twig') }}
+{% endblock %}
